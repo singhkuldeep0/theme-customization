@@ -27,7 +27,7 @@ const Social = () => {
   return (
     <div className='absolute flex gap-8 bottom-10'>
       {socialLinks.map((item)=>(
-       <SocialButton item={item}/>
+       <SocialButton key={item.name} item={item}/>
       ))
       
       }
