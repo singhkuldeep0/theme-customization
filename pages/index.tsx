@@ -36,7 +36,7 @@ export default function Home() {
 
     <div className='flex items-center gap-4' style={{color:color}}>
        <BsGithub fontSize={fontSize.xxxl}/>
-       <a className="footeranim rounded !text-white px-2" href="https://github.com/singhkuldeep0/theme-customization" style={{fontSize:fontSize.xl , backgroundColor:color}} >
+       <a target='_blank' className="footeranim rounded !text-white px-2" href="https://github.com/singhkuldeep0/theme-customization" style={{fontSize:fontSize.xl , backgroundColor:color}} >
           Here is the code
         </a>
       </div>
