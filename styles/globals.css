@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footeranim{
+    @apply relative text-inherit
+}
+
+.footeranim::after{
+    @apply content-[""] bg-inherit h-[3px] w-[50%] left-0 -bottom-[10px] rounded-xl absolute duration-300
+}
+
+.footeranim:hover::after{
+    @apply w-[100%]
+}

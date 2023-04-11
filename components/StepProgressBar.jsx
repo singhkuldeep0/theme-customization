@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Theme from "./theme";
+import { setFontSize } from "@/features/theme";
 
 const StepProgressBar = () => {
-
-  const color = 'black'
+  const dispatch = useDispatch()
+  const color = useSelector(state => state.theme.color)
   let [percentage, setPercentage] = useState(50)
+  const { fontSize } = Theme()
 
  return (
     <ProgressBar
-    filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+    filledBackground={color}
     percent={percentage}
     height="4px"
     >
@@ -21,7 +24,7 @@ const StepProgressBar = () => {
           >
             <div className={`${percentage === 0 ? 'w-4 h-4' : 'w-3 h-3'} cursor-pointer rounded-full`} style={{ background: color }} onClick={() => {
               setPercentage(0)
-
+              dispatch(setFontSize(fontSize[0]))
             }} />
           </div>
         )}
@@ -33,7 +36,7 @@ const StepProgressBar = () => {
        >
          <div className={`${percentage === 25 ? 'w-4 h-4' : 'w-3 h-3'} cursor-pointer rounded-full`} style={{ background: color }} onClick={() => {
            setPercentage(25)
-
+           dispatch(setFontSize(fontSize[1]))
          }} />
        </div>
         )}
@@ -45,7 +48,7 @@ const StepProgressBar = () => {
         >
           <div className={`${percentage === 50 ? 'w-4 h-4' : 'w-3 h-3'} cursor-pointer rounded-full`} style={{ background: color }} onClick={() => {
             setPercentage(50)
-
+            dispatch(setFontSize(fontSize[2]))
           }} />
         </div>
         )}
@@ -57,7 +60,7 @@ const StepProgressBar = () => {
         >
           <div className={`${percentage === 75 ? 'w-4 h-4' : 'w-3 h-3'} cursor-pointer rounded-full`} style={{ background: color }} onClick={() => {
             setPercentage(75)
-
+            dispatch(setFontSize(fontSize[3]))
           }} />
         </div>
         )}
@@ -69,7 +72,7 @@ const StepProgressBar = () => {
         >
           <div className={`${percentage === 100 ? 'w-4 h-4' : 'w-3 h-3'} cursor-pointer rounded-full`} style={{ background: color }} onClick={() => {
             setPercentage(100)
-
+            dispatch(setFontSize(fontSize[4]))
           }} />
         </div>
         )}
