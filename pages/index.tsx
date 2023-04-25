@@ -28,8 +28,8 @@ export default function Home() {
    <main className='relative flex justify-center items-center min-h-screen' style={{ background:background.secondary}}>
     <h1 style={{color:color , fontSize:fontSize.xxl}} className='absolute text-center top-10 font-bold'>Twitter Theme Customization</h1>
     <div className='flex flex-col gap-10 justify-center items-center -mt-36'>
-      <div className='relative h-44 w-36 overflow-hidden rounded-full p-4' style={{background:color}}>
-    <Image src="https://res.cloudinary.com/cdf/image/upload/v1681234556/img1_loodyu.png" fill alt=""/>
+      <div className='relative h-36 aspect-square overflow-hidden rounded-full p-4' style={{background:color}}>
+    <Image src="/img2.png" fill alt="" className='mt-2 rotate-1'/>
       </div>
 
     <Modal/>
